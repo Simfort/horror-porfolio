@@ -6,7 +6,7 @@ import EyePart from "./EyePart";
 export default function HeaderScreen() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
-  const frameRef = useRef(null);
+  const frameRef = useRef<number | null>(null);
   const isAnimating = useRef(false);
 
   useEffect(() => {
@@ -21,10 +21,10 @@ export default function HeaderScreen() {
 
     frameRef.current = requestAnimationFrame(animate);
 
-    return () => cancelAnimationFrame(frameRef.current);
+    return () => cancelAnimationFrame(frameRef.current!);
   }, [mousePos]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.PointerEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;

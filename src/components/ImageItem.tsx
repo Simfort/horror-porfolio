@@ -1,10 +1,4 @@
-export default function ImageItem({
-  path,
-  index,
-}: {
-  path: string;
-  index: number;
-}) {
+export default function ImageItem({ path }: { path: string }) {
   return (
     <img
       loading="lazy"

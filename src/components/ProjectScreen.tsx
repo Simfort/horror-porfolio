@@ -21,7 +21,7 @@ export default function ProjectScreen() {
   return (
     <section
       id="projects"
-      className="h-screen flex-col overflow-hidden w-screen flex items-center pt-30 bg-black/90 shadow-2xl">
+      className="flex-col overflow-hidden w-screen py-10 flex items-center pt-30 bg-black/90 shadow-2xl">
       <div ref={titleRef} className="relative flex items-center justify-center">
         <img
           src="/hands.png"
@@ -39,14 +39,14 @@ export default function ProjectScreen() {
           ref={carouselRef}
           className="flex gap-5 items-center absolute slide-projects ">
           {paths.map((path, index) => (
-            <ImageItem path={path} index={index} />
+            <ImageItem key={index} path={path} />
           ))}
         </div>{" "}
         <div
           ref={carouselRef}
           className="flex gap-5 left-5 items-center absolute  slide-projects ">
           {paths.map((path, index) => (
-            <ImageItem path={path} index={index} />
+            <ImageItem key={index} path={path} />
           ))}
         </div>
       </div>

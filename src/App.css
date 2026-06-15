@@ -16,6 +16,12 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
 
 .slide-projects {
   animation: slide 40s linear infinite;
@@ -31,6 +37,6 @@ body {
     transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%); /* 100% / 7 слайдов ≈ 14.2857% */
+    transform: translateX(-100%);
   }
 }

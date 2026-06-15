@@ -3,7 +3,8 @@ export default function ImageItem({ path }: { path: string }) {
     <img
       loading="lazy"
       src={path}
-      className={`  hover:scale-120 transition-[scale] duration-200 max-w-100 shadow-2xl  `}
+      className={`hover:scale-120 transition-[scale] duration-200 max-w-100 shadow-2xl`}
+      alt={`Project image ${path}`}
     />
   );
 }

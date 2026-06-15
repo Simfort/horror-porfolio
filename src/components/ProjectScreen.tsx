@@ -25,16 +25,17 @@ export default function ProjectScreen() {
       <div ref={titleRef} className="relative flex items-center justify-center">
         <img
           src="/hands.png"
-          className={`${isView ? "opacity-100" : "opacity-0"} transition-opacity duration-1000 delay-150 absolute max-w-100 z-0`}
+          className={`${isView ? "opacity-100" : "opacity-0"} max-sm:max-w-80 transition-opacity duration-1000 delay-150 absolute max-w-100 z-0`}
         />
         <h2 className="text-white text-4xl relative z-1">My projects</h2>
       </div>
-      <p className="text-white mt-20 w-1/2 text-center">
+      <p
+        className={`text-white mt-20 max-sm:w-80 w-1/2 ${isView ? "opacity-100" : "opacity-0"} delay-1000 duration-300 transition-opacity  text-center`}>
         I have been programming for 4 years. During this time, I have created
         many websites, from landing pages to websites with AI and PWA
         implementations.
       </p>
-      <div className=" min-w-full h-100 bg-black items-center  overflow-hidden flex mt-5">
+      <div className="w-full relative  h-100 bg-black items-center   flex mt-5">
         <div
           ref={carouselRef}
           className="flex gap-5 items-center absolute slide-projects ">
@@ -44,22 +45,25 @@ export default function ProjectScreen() {
         </div>{" "}
         <div
           ref={carouselRef}
-          className="flex gap-5 left-5 items-center absolute  slide-projects ">
+          className="flex gap-5 left-5 items-center absolute slide-projects ">
           {paths.map((path, index) => (
             <ImageItem key={index} path={path} />
           ))}
         </div>
       </div>
-      <p className="text-white mt-5">This all in my github</p>
+      <div className="flex gap-2 items-center mt-5">
+        <p className="text-white mt-5">This all in my github</p>
 
-      <a href="https://github.com/Simfort">
-        {" "}
-        <img
-          src="/github.png"
-          loading="lazy"
-          className="max-w-30 bg-white rounded-full mt-5"
-        />
-      </a>
+        <a href="https://github.com/Simfort" className="block">
+          {" "}
+          <img
+            src="/github.png"
+            width={50}
+            loading="lazy"
+            className=" bg-white rounded-full"
+          />
+        </a>
+      </div>
     </section>
   );
 }

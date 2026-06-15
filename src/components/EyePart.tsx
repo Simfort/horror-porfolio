@@ -25,19 +25,31 @@ export default function EyePart({
         willChange: "transform",
         transition: "1s linear",
       }}
-      className="flex items-center absolute max-sm:-top-20  left-[40%] -top-80 justify-center gap-2 ">
-      {" "}
-      <img src="/arrowUp.png" loading="lazy" className="size-30 rotate-z-90" />
+      className="flex items-center absolute max-sm:-top-20  left-[40%] -top-80 justify-center gap-2 "
+      onFocus={() => setIsMouse(true)}
+      onBlur={() => setIsMouse(false)}
+      tabIndex={0}
+      aria-haspopup="true"
+      aria-expanded={isMouse ? "true" : "false"}>
+      <img
+        src="/arrowUp.png"
+        loading="lazy"
+        className="size-30 rotate-z-90"
+        aria-hidden
+      />
       {isMouse && (
-        <div className="absolute left-30 size-50">
+        <div
+          aria-live="polite"
+          aria-label="How user rich money"
+          className="absolute left-30 size-50">
           <p className="text-xl">I rich money with frilance</p>
         </div>
       )}
       <img
         src="/eye.png"
         className={`${isMouse ? "opacity-20" : ""} w-50 transition-opacity duration-150`}
-        alt="Hand"
         loading="lazy"
+        alt="Eye — decoration element"
       />
     </div>
   );

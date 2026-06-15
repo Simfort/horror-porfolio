@@ -79,7 +79,10 @@ export default function HeaderScreen() {
         </div>{" "}
       </div>{" "}
       <div className="absolute bottom-0 h-10 w-full left-0  flex items-center justify-center">
-        <a href="#projects" className="relative z-10  ">
+        <a
+          aria-label="Link to the my projects"
+          href="#projects"
+          className="relative z-10  ">
           GO
         </a>
       </div>

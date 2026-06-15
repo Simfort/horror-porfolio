@@ -25,6 +25,7 @@ export default function ProjectScreen() {
       <div ref={titleRef} className="relative flex items-center justify-center">
         <img
           src="/hands.png"
+          alt="Hands - decoration element"
           className={`${isView ? "opacity-100" : "opacity-0"} max-sm:max-w-80 transition-opacity duration-1000 delay-150 absolute max-w-100 z-0`}
         />
         <h2 className="text-white text-4xl relative z-1">My projects</h2>
@@ -54,12 +55,16 @@ export default function ProjectScreen() {
       <div className="flex gap-2 items-center mt-5">
         <p className="text-white mt-5">This all in my github</p>
 
-        <a href="https://github.com/Simfort" className="block">
+        <a
+          href="https://github.com/Simfort"
+          aria-label="Github link Simfort"
+          className="block">
           {" "}
           <img
             src="/github.png"
             width={50}
             loading="lazy"
+            alt="Github icon"
             className=" bg-white rounded-full"
           />
         </a>
